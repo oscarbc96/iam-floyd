@@ -59,6 +59,8 @@ export class PolicyStatement extends iam.PolicyStatement {
    */
   public add = this.addActions;
 
+  private forMethod = this.addPrincipals;
+
   /**
    * Holds the prefix of the service actions, e.g. `ec2`
    */
@@ -97,6 +99,47 @@ export class PolicyStatement extends iam.PolicyStatement {
    */
   public notActions() {
     this.add = this.addNotActions;
+    return this;
+  }
+
+  /**
+   * Change the behavior of all subsequent `for()` calls to use [`notPrincipal`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html).
+   */
+  public notPrincipals() {
+    this.forMethod = this.addNotPrincipals;
+    return this;
+  }
+
+  /**
+   * Adds principals to the statement.
+   *
+   * Depending on the "mode", principals will be either added to the list of [`Principal`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html) or [`NotPrincipal`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html).
+   *
+   * The mode can be switch by calling `notPrincipals()`.
+   *
+   * @param principals IAM principals that will be added
+   */
+  public for(
+    ...principals: (
+      | iam.IPrincipal
+      | {
+          [key: string]: string[];
+        }
+    )[]
+  ) {
+    principals.forEach((principal) => {
+      if (typeof principal.policyFragment === 'function') {
+        this.forMethod(principal as iam.IPrincipal);
+      } else {
+        const fragment = new iam.PrincipalPolicyFragment(
+          principal as {
+            [key: string]: string[];
+          }
+        );
+        console.log(fragment);
+      }
+    });
+
     return this;
   }
 
@@ -649,7 +692,7 @@ export class PolicyStatement extends iam.PolicyStatement {
   /**
    * JSON-ify the policy statement
    *
-   * Also adds `*` to the list of resources, if not was manually added
+   * Also adds `*` to the list of resources, if none was manually added
    *
    * Used when JSON.stringify() is called
    */
@@ -658,5 +701,15 @@ export class PolicyStatement extends iam.PolicyStatement {
       this.addResources('*');
     }
     return super.toStatementJson();
+  }
+
+  /**
+   * JSON-ify the statement
+   *
+   * Used when JSON.stringify() is called
+   */
+  public toJSON() {
+    //this.principals
+    return super.toJSON();
   }
 }
