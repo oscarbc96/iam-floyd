@@ -15,9 +15,37 @@ interface Fixes {
 export const fixes: Fixes = {
   amazonec2: {
     conditions: {
+      AutoPlacement: {
+        operator: {
+          type: 'bool',
+        },
+      },
+      HostRecovery: {
+        operator: {
+          type: 'bool',
+        },
+      },
       SnapshotTime: {
         operator: {
           type: 'date',
+        },
+      },
+    },
+  },
+  amazonelasticfilesystem: {
+    conditions: {
+      AccessPointArn: {
+        operator: {
+          type: 'arn',
+        },
+      },
+    },
+  },
+  amazonglacier: {
+    conditions: {
+      ArchiveAgeInDays: {
+        operator: {
+          type: 'numeric',
         },
       },
     },
@@ -30,6 +58,24 @@ export const fixes: Fixes = {
   },
   amazonpinpointemailservice: {
     id: 'ses-pinpoint',
+  },
+  amazonquicksight: {
+    conditions: {
+      IamArn: {
+        operator: {
+          type: 'arn',
+        },
+      },
+    },
+  },
+  amazonredshift: {
+    conditions: {
+      DurationSeconds: {
+        operator: {
+          type: 'numeric',
+        },
+      },
+    },
   },
   awsmarketplacecatalog: {
     id: 'aws-marketplace-catalog',
