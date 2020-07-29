@@ -376,10 +376,10 @@ export class Batch extends PolicyStatement {
    * - .registerJobDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImage(value: string | string[], operator?: string) {
-    return this.if(`batch:Image`, value, operator || 'StringLike');
+  public ifImage(value: string | string[], op?: string) {
+    return this.if(`batch:Image`, value, op || 'StringLike');
   }
 
   /**
@@ -401,9 +401,9 @@ export class Batch extends PolicyStatement {
    * - .registerJobDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifUser(value: string | string[], operator?: string) {
-    return this.if(`batch:User`, value, operator || 'StringLike');
+  public ifUser(value: string | string[], op?: string) {
+    return this.if(`batch:User`, value, op || 'StringLike');
   }
 }

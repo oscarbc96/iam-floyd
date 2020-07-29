@@ -808,10 +808,10 @@ export class Events extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -825,10 +825,10 @@ export class Events extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -843,10 +843,10 @@ export class Events extends PolicyStatement {
    * - .untagResource()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -858,10 +858,10 @@ export class Events extends PolicyStatement {
    * - .putTargets()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTargetArn(value: string | string[], operator?: string) {
-    return this.if(`events:TargetArn`, value, operator || 'ArnEquals');
+  public ifTargetArn(value: string | string[], op?: string) {
+    return this.if(`events:TargetArn`, value, op || 'ArnEquals');
   }
 
   /**
@@ -873,10 +873,10 @@ export class Events extends PolicyStatement {
    * - .putRule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailType(value: string | string[], operator?: string) {
-    return this.if(`events:detail-type`, value, operator || 'StringLike');
+  public ifDetailType(value: string | string[], op?: string) {
+    return this.if(`events:detail-type`, value, op || 'StringLike');
   }
 
   /**
@@ -888,10 +888,10 @@ export class Events extends PolicyStatement {
    * - .putRule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailEventTypeCode(value: string | string[], operator?: string) {
-    return this.if(`events:detail.eventTypeCode`, value, operator || 'StringLike');
+  public ifDetailEventTypeCode(value: string | string[], op?: string) {
+    return this.if(`events:detail.eventTypeCode`, value, op || 'StringLike');
   }
 
   /**
@@ -903,10 +903,10 @@ export class Events extends PolicyStatement {
    * - .putRule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailService(value: string | string[], operator?: string) {
-    return this.if(`events:detail.service`, value, operator || 'StringLike');
+  public ifDetailService(value: string | string[], op?: string) {
+    return this.if(`events:detail.service`, value, op || 'StringLike');
   }
 
   /**
@@ -918,10 +918,10 @@ export class Events extends PolicyStatement {
    * - .putRule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: string) {
-    return this.if(`events:detail.userIdentity.principalId`, value, operator || 'StringLike');
+  public ifDetailUserIdentityPrincipalId(value: string | string[], op?: string) {
+    return this.if(`events:detail.userIdentity.principalId`, value, op || 'StringLike');
   }
 
   /**
@@ -933,9 +933,9 @@ export class Events extends PolicyStatement {
    * - .putRule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSource(value: string | string[], operator?: string) {
-    return this.if(`events:source`, value, operator || 'StringLike');
+  public ifSource(value: string | string[], op?: string) {
+    return this.if(`events:source`, value, op || 'StringLike');
   }
 }

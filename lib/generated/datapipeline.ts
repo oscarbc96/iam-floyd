@@ -524,10 +524,10 @@ export class Datapipeline extends PolicyStatement {
    * - .validatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPipelineCreator(value: string | string[], operator?: string) {
-    return this.if(`datapipeline:PipelineCreator`, value, operator || 'ArnEquals');
+  public ifPipelineCreator(value: string | string[], op?: string) {
+    return this.if(`datapipeline:PipelineCreator`, value, op || 'ArnEquals');
   }
 
   /**
@@ -552,10 +552,10 @@ export class Datapipeline extends PolicyStatement {
    * - .validatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTag(value: string | string[], operator?: string) {
-    return this.if(`datapipeline:Tag`, value, operator || 'ArnEquals');
+  public ifTag(value: string | string[], op?: string) {
+    return this.if(`datapipeline:Tag`, value, op || 'ArnEquals');
   }
 
   /**
@@ -572,9 +572,9 @@ export class Datapipeline extends PolicyStatement {
    * - .validatePipelineDefinition()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifWorkerGroup(value: string | string[], operator?: string) {
-    return this.if(`datapipeline:workerGroup`, value, operator || 'ArnEquals');
+  public ifWorkerGroup(value: string | string[], op?: string) {
+    return this.if(`datapipeline:workerGroup`, value, op || 'ArnEquals');
   }
 }

@@ -480,9 +480,9 @@ export function createModule(module: Module): Promise<void> {
         type: types.join(' | '),
       });
 
-      desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
+      desc += `\n@param op Operator of the condition. Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
       method.addParameter({
-        name: 'operator',
+        name: 'op',
         type: 'string',
         hasQuestionToken: true,
       });
@@ -503,7 +503,7 @@ export function createModule(module: Module): Promise<void> {
       }
 
       methodBody.push(
-        `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[type].default}')`
+        `return this.if(\`${propsKey}\`, value, op || '${conditionTypeDefaults[type].default}')`
       );
     } else if (type == 'bool' || type == 'boolean') {
       desc += '\n@param value `true` or `false`. **Default:** `true`';
@@ -545,7 +545,6 @@ export function createIndex() {
   const sourceFile = project.createSourceFile(filePath);
 
   sourceFile.addExportDeclaration({
-    namedExports: ['AccessLevel', 'All', 'Operator', 'OperatorModifier'],
     moduleSpecifier: './shared',
   });
 
@@ -562,7 +561,6 @@ export function createIndex() {
     });
 
     sourceFile.addExportDeclaration({
-      namedExports: exports,
       moduleSpecifier: `./generated/${module.filename}`,
     });
   });

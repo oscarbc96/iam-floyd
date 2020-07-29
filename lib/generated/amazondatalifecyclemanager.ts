@@ -235,10 +235,10 @@ export class Dlm extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -251,10 +251,10 @@ export class Dlm extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -266,9 +266,9 @@ export class Dlm extends PolicyStatement {
    * - .createLifecyclePolicy()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 }

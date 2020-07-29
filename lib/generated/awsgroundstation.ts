@@ -793,10 +793,10 @@ export class Groundstation extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -810,10 +810,10 @@ export class Groundstation extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -828,10 +828,10 @@ export class Groundstation extends PolicyStatement {
    * - .untagResource()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -841,10 +841,10 @@ export class Groundstation extends PolicyStatement {
    * - Config
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifConfigId(value: string | string[], operator?: string) {
-    return this.if(`groundstation:configId`, value, operator || 'StringLike');
+  public ifConfigId(value: string | string[], op?: string) {
+    return this.if(`groundstation:configId`, value, op || 'StringLike');
   }
 
   /**
@@ -854,10 +854,10 @@ export class Groundstation extends PolicyStatement {
    * - Config
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifConfigType(value: string | string[], operator?: string) {
-    return this.if(`groundstation:configType`, value, operator || 'StringLike');
+  public ifConfigType(value: string | string[], op?: string) {
+    return this.if(`groundstation:configType`, value, op || 'StringLike');
   }
 
   /**
@@ -867,10 +867,10 @@ export class Groundstation extends PolicyStatement {
    * - Contact
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifContactId(value: string | string[], operator?: string) {
-    return this.if(`groundstation:contactId`, value, operator || 'StringLike');
+  public ifContactId(value: string | string[], op?: string) {
+    return this.if(`groundstation:contactId`, value, op || 'StringLike');
   }
 
   /**
@@ -880,10 +880,10 @@ export class Groundstation extends PolicyStatement {
    * - DataflowEndpointGroup
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDataflowEndpointGroupId(value: string | string[], operator?: string) {
-    return this.if(`groundstation:dataflowEndpointGroupId`, value, operator || 'StringLike');
+  public ifDataflowEndpointGroupId(value: string | string[], op?: string) {
+    return this.if(`groundstation:dataflowEndpointGroupId`, value, op || 'StringLike');
   }
 
   /**
@@ -893,10 +893,10 @@ export class Groundstation extends PolicyStatement {
    * - GroundStationResource
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGroundStationId(value: string | string[], operator?: string) {
-    return this.if(`groundstation:groundStationId`, value, operator || 'StringLike');
+  public ifGroundStationId(value: string | string[], op?: string) {
+    return this.if(`groundstation:groundStationId`, value, op || 'StringLike');
   }
 
   /**
@@ -906,10 +906,10 @@ export class Groundstation extends PolicyStatement {
    * - MissionProfile
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMissionProfileId(value: string | string[], operator?: string) {
-    return this.if(`groundstation:missionProfileId`, value, operator || 'StringLike');
+  public ifMissionProfileId(value: string | string[], op?: string) {
+    return this.if(`groundstation:missionProfileId`, value, op || 'StringLike');
   }
 
   /**
@@ -919,9 +919,9 @@ export class Groundstation extends PolicyStatement {
    * - Satellite
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSatelliteId(value: string | string[], operator?: string) {
-    return this.if(`groundstation:satelliteId`, value, operator || 'StringLike');
+  public ifSatelliteId(value: string | string[], op?: string) {
+    return this.if(`groundstation:satelliteId`, value, op || 'StringLike');
   }
 }

@@ -2685,9 +2685,9 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * @param value The value(s) to check
-   * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
+   * @param op Operator of the condition. Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifAwsCurrentTime(value: Date | string | (Date | string)[], operator?: string) {
+  public ifAwsCurrentTime(value: Date | string | (Date | string)[], op?: string) {
     if (typeof (value as Date).getMonth === "function") {
       value = (value as Date).toISOString();
     } else if (Array.isArray(value)) {
@@ -2698,7 +2698,7 @@ export class Greengrass extends PolicyStatement {
         return item;
       });
     }
-    return this.if(`aws:CurrentTime`, value, operator || 'DateEquals');
+    return this.if(`aws:CurrentTime`, value, op || 'DateEquals');
   }
 
   /**
@@ -2707,9 +2707,9 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * @param value The value(s) to check
-   * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
+   * @param op Operator of the condition. Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifAwsEpochTime(value: number | Date | string | (number | Date | string)[], operator?: string) {
+  public ifAwsEpochTime(value: number | Date | string | (number | Date | string)[], op?: string) {
     if (typeof (value as Date).getMonth === "function") {
       value = (value as Date).toISOString();
     } else if (Array.isArray(value)) {
@@ -2720,7 +2720,7 @@ export class Greengrass extends PolicyStatement {
         return item;
       });
     }
-    return this.if(`aws:EpochTime`, value, operator || 'DateEquals');
+    return this.if(`aws:EpochTime`, value, op || 'DateEquals');
   }
 
   /**
@@ -2729,10 +2729,10 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * @param value The value(s) to check
-   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   * @param op Operator of the condition. Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifAwsMultiFactorAuthAge(value: number | number[], operator?: string) {
-    return this.if(`aws:MultiFactorAuthAge`, value, operator || 'NumericEquals');
+  public ifAwsMultiFactorAuthAge(value: number | number[], op?: string) {
+    return this.if(`aws:MultiFactorAuthAge`, value, op || 'NumericEquals');
   }
 
   /**
@@ -2766,10 +2766,10 @@ export class Greengrass extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -2790,10 +2790,10 @@ export class Greengrass extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -2827,10 +2827,10 @@ export class Greengrass extends PolicyStatement {
    * - .untagResource()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -2839,9 +2839,9 @@ export class Greengrass extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsUserAgent(value: string | string[], operator?: string) {
-    return this.if(`aws:UserAgent`, value, operator || 'StringLike');
+  public ifAwsUserAgent(value: string | string[], op?: string) {
+    return this.if(`aws:UserAgent`, value, op || 'StringLike');
   }
 }

@@ -2,12 +2,12 @@ import { AccessLevel } from '../access-level';
 import { PolicyStatementWithCondition } from './2-conditions';
 
 export interface Action {
-  url: string;
-  description: string;
-  accessLevel: string;
-  resourceTypes?: any;
-  conditions?: string[];
-  dependentActions?: string[];
+  readonly url: string;
+  readonly description: string;
+  readonly accessLevel: string;
+  readonly resourceTypes?: any;
+  readonly conditions?: string[];
+  readonly dependentActions?: string[];
 }
 
 export interface Actions {

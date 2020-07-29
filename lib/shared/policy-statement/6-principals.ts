@@ -1,6 +1,6 @@
 import { PolicyStatementWithEffect } from './5-effect';
 
-interface Principals {
+export interface Principals {
   [key: string]: string[];
 }
 

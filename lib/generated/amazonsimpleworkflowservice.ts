@@ -1244,10 +1244,10 @@ export class Swf extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -1260,10 +1260,10 @@ export class Swf extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -1277,10 +1277,10 @@ export class Swf extends PolicyStatement {
    * - .untagResource()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -1294,10 +1294,10 @@ export class Swf extends PolicyStatement {
    * - .respondActivityTaskCompleted()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifActivityTypeName(value: string | string[], operator?: string) {
-    return this.if(`swf:activityType.name`, value, operator || 'StringLike');
+  public ifActivityTypeName(value: string | string[], op?: string) {
+    return this.if(`swf:activityType.name`, value, op || 'StringLike');
   }
 
   /**
@@ -1311,10 +1311,10 @@ export class Swf extends PolicyStatement {
    * - .respondActivityTaskCompleted()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifActivityTypeVersion(value: string | string[], operator?: string) {
-    return this.if(`swf:activityType.version`, value, operator || 'StringLike');
+  public ifActivityTypeVersion(value: string | string[], op?: string) {
+    return this.if(`swf:activityType.version`, value, op || 'StringLike');
   }
 
   /**
@@ -1327,10 +1327,10 @@ export class Swf extends PolicyStatement {
    * - .registerWorkflowType()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDefaultTaskListName(value: string | string[], operator?: string) {
-    return this.if(`swf:defaultTaskList.name`, value, operator || 'StringLike');
+  public ifDefaultTaskListName(value: string | string[], op?: string) {
+    return this.if(`swf:defaultTaskList.name`, value, op || 'StringLike');
   }
 
   /**
@@ -1343,10 +1343,10 @@ export class Swf extends PolicyStatement {
    * - .registerWorkflowType()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifName(value: string | string[], operator?: string) {
-    return this.if(`swf:name`, value, operator || 'StringLike');
+  public ifName(value: string | string[], op?: string) {
+    return this.if(`swf:name`, value, op || 'StringLike');
   }
 
   /**
@@ -1361,10 +1361,10 @@ export class Swf extends PolicyStatement {
    * - .listOpenWorkflowExecutions()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagFilterTag(value: string | string[], operator?: string) {
-    return this.if(`swf:tagFilter.tag`, value, operator || 'StringLike');
+  public ifTagFilterTag(value: string | string[], op?: string) {
+    return this.if(`swf:tagFilter.tag`, value, op || 'StringLike');
   }
 
   /**
@@ -1377,10 +1377,10 @@ export class Swf extends PolicyStatement {
    * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember0(value: string | string[], operator?: string) {
-    return this.if(`swf:tagList.member.0`, value, operator || 'StringLike');
+  public ifTagListMember0(value: string | string[], op?: string) {
+    return this.if(`swf:tagList.member.0`, value, op || 'StringLike');
   }
 
   /**
@@ -1393,10 +1393,10 @@ export class Swf extends PolicyStatement {
    * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember1(value: string | string[], operator?: string) {
-    return this.if(`swf:tagList.member.1`, value, operator || 'StringLike');
+  public ifTagListMember1(value: string | string[], op?: string) {
+    return this.if(`swf:tagList.member.1`, value, op || 'StringLike');
   }
 
   /**
@@ -1409,10 +1409,10 @@ export class Swf extends PolicyStatement {
    * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember2(value: string | string[], operator?: string) {
-    return this.if(`swf:tagList.member.2`, value, operator || 'StringLike');
+  public ifTagListMember2(value: string | string[], op?: string) {
+    return this.if(`swf:tagList.member.2`, value, op || 'StringLike');
   }
 
   /**
@@ -1425,10 +1425,10 @@ export class Swf extends PolicyStatement {
    * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember3(value: string | string[], operator?: string) {
-    return this.if(`swf:tagList.member.3`, value, operator || 'StringLike');
+  public ifTagListMember3(value: string | string[], op?: string) {
+    return this.if(`swf:tagList.member.3`, value, op || 'StringLike');
   }
 
   /**
@@ -1441,10 +1441,10 @@ export class Swf extends PolicyStatement {
    * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember4(value: string | string[], operator?: string) {
-    return this.if(`swf:tagList.member.4`, value, operator || 'StringLike');
+  public ifTagListMember4(value: string | string[], op?: string) {
+    return this.if(`swf:tagList.member.4`, value, op || 'StringLike');
   }
 
   /**
@@ -1461,10 +1461,10 @@ export class Swf extends PolicyStatement {
    * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTaskListName(value: string | string[], operator?: string) {
-    return this.if(`swf:taskList.name`, value, operator || 'StringLike');
+  public ifTaskListName(value: string | string[], op?: string) {
+    return this.if(`swf:taskList.name`, value, op || 'StringLike');
   }
 
   /**
@@ -1479,10 +1479,10 @@ export class Swf extends PolicyStatement {
    * - .listOpenWorkflowExecutions()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTypeFilterName(value: string | string[], operator?: string) {
-    return this.if(`swf:typeFilter.name`, value, operator || 'StringLike');
+  public ifTypeFilterName(value: string | string[], op?: string) {
+    return this.if(`swf:typeFilter.name`, value, op || 'StringLike');
   }
 
   /**
@@ -1497,10 +1497,10 @@ export class Swf extends PolicyStatement {
    * - .listOpenWorkflowExecutions()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTypeFilterVersion(value: string | string[], operator?: string) {
-    return this.if(`swf:typeFilter.version`, value, operator || 'StringLike');
+  public ifTypeFilterVersion(value: string | string[], op?: string) {
+    return this.if(`swf:typeFilter.version`, value, op || 'StringLike');
   }
 
   /**
@@ -1513,10 +1513,10 @@ export class Swf extends PolicyStatement {
    * - .registerWorkflowType()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVersion(value: string | string[], operator?: string) {
-    return this.if(`swf:version`, value, operator || 'StringLike');
+  public ifVersion(value: string | string[], op?: string) {
+    return this.if(`swf:version`, value, op || 'StringLike');
   }
 
   /**
@@ -1531,10 +1531,10 @@ export class Swf extends PolicyStatement {
    * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWorkflowTypeName(value: string | string[], operator?: string) {
-    return this.if(`swf:workflowType.name`, value, operator || 'StringLike');
+  public ifWorkflowTypeName(value: string | string[], op?: string) {
+    return this.if(`swf:workflowType.name`, value, op || 'StringLike');
   }
 
   /**
@@ -1549,9 +1549,9 @@ export class Swf extends PolicyStatement {
    * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWorkflowTypeVersion(value: string | string[], operator?: string) {
-    return this.if(`swf:workflowType.version`, value, operator || 'StringLike');
+  public ifWorkflowTypeVersion(value: string | string[], op?: string) {
+    return this.if(`swf:workflowType.version`, value, op || 'StringLike');
   }
 }

@@ -1312,10 +1312,10 @@ export class Dynamodb extends PolicyStatement {
    * - .updateItem()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAttributes(value: string | string[], operator?: string) {
-    return this.if(`dynamodb:Attributes`, value, operator || 'StringLike');
+  public ifAttributes(value: string | string[], op?: string) {
+    return this.if(`dynamodb:Attributes`, value, op || 'StringLike');
   }
 
   /**
@@ -1330,10 +1330,10 @@ export class Dynamodb extends PolicyStatement {
    * - .updateItem()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEnclosingOperation(value: string | string[], operator?: string) {
-    return this.if(`dynamodb:EnclosingOperation`, value, operator || 'StringLike');
+  public ifEnclosingOperation(value: string | string[], op?: string) {
+    return this.if(`dynamodb:EnclosingOperation`, value, op || 'StringLike');
   }
 
   /**
@@ -1352,10 +1352,10 @@ export class Dynamodb extends PolicyStatement {
    * - .updateItem()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLeadingKeys(value: string | string[], operator?: string) {
-    return this.if(`dynamodb:LeadingKeys`, value, operator || 'StringLike');
+  public ifLeadingKeys(value: string | string[], op?: string) {
+    return this.if(`dynamodb:LeadingKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -1375,10 +1375,10 @@ export class Dynamodb extends PolicyStatement {
    * - .updateItem()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReturnConsumedCapacity(value: string | string[], operator?: string) {
-    return this.if(`dynamodb:ReturnConsumedCapacity`, value, operator || 'StringLike');
+  public ifReturnConsumedCapacity(value: string | string[], op?: string) {
+    return this.if(`dynamodb:ReturnConsumedCapacity`, value, op || 'StringLike');
   }
 
   /**
@@ -1395,10 +1395,10 @@ export class Dynamodb extends PolicyStatement {
    * - .updateItem()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReturnValues(value: string | string[], operator?: string) {
-    return this.if(`dynamodb:ReturnValues`, value, operator || 'StringLike');
+  public ifReturnValues(value: string | string[], op?: string) {
+    return this.if(`dynamodb:ReturnValues`, value, op || 'StringLike');
   }
 
   /**
@@ -1413,9 +1413,9 @@ export class Dynamodb extends PolicyStatement {
    * - .scan()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSelect(value: string | string[], operator?: string) {
-    return this.if(`dynamodb:Select`, value, operator || 'StringLike');
+  public ifSelect(value: string | string[], op?: string) {
+    return this.if(`dynamodb:Select`, value, op || 'StringLike');
   }
 }

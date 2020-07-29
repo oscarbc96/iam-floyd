@@ -3476,10 +3476,10 @@ export class Iam extends PolicyStatement {
    * - .createServiceLinkedRole()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAWSServiceName(value: string | string[], operator?: string) {
-    return this.if(`iam:AWSServiceName`, value, operator || 'StringLike');
+  public ifAWSServiceName(value: string | string[], op?: string) {
+    return this.if(`iam:AWSServiceName`, value, op || 'StringLike');
   }
 
   /**
@@ -3491,10 +3491,10 @@ export class Iam extends PolicyStatement {
    * - .passRole()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifAssociatedResourceArn(value: string | string[], operator?: string) {
-    return this.if(`iam:AssociatedResourceArn`, value, operator || 'ArnEquals');
+  public ifAssociatedResourceArn(value: string | string[], op?: string) {
+    return this.if(`iam:AssociatedResourceArn`, value, op || 'ArnEquals');
   }
 
   /**
@@ -3506,10 +3506,10 @@ export class Iam extends PolicyStatement {
    * - .generateOrganizationsAccessReport()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOrganizationsPolicyId(value: string | string[], operator?: string) {
-    return this.if(`iam:OrganizationsPolicyId`, value, operator || 'StringLike');
+  public ifOrganizationsPolicyId(value: string | string[], op?: string) {
+    return this.if(`iam:OrganizationsPolicyId`, value, op || 'StringLike');
   }
 
   /**
@@ -3521,10 +3521,10 @@ export class Iam extends PolicyStatement {
    * - .passRole()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPassedToService(value: string | string[], operator?: string) {
-    return this.if(`iam:PassedToService`, value, operator || 'StringLike');
+  public ifPassedToService(value: string | string[], op?: string) {
+    return this.if(`iam:PassedToService`, value, op || 'StringLike');
   }
 
   /**
@@ -3549,10 +3549,10 @@ export class Iam extends PolicyStatement {
    * - .putUserPolicy()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPermissionsBoundary(value: string | string[], operator?: string) {
-    return this.if(`iam:PermissionsBoundary`, value, operator || 'StringLike');
+  public ifPermissionsBoundary(value: string | string[], op?: string) {
+    return this.if(`iam:PermissionsBoundary`, value, op || 'StringLike');
   }
 
   /**
@@ -3569,10 +3569,10 @@ export class Iam extends PolicyStatement {
    * - .detachUserPolicy()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPolicyARN(value: string | string[], operator?: string) {
-    return this.if(`iam:PolicyARN`, value, operator || 'ArnEquals');
+  public ifPolicyARN(value: string | string[], op?: string) {
+    return this.if(`iam:PolicyARN`, value, op || 'ArnEquals');
   }
 
   /**
@@ -3586,9 +3586,9 @@ export class Iam extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`iam:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 }

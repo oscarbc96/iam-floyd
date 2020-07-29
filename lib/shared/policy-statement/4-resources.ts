@@ -5,10 +5,10 @@ export interface ResourceTypes {
 }
 
 export interface ResourceType {
-  name: string;
-  url: string;
-  arn: string;
-  conditionKeys: string[];
+  readonly name: string;
+  readonly url: string;
+  readonly arn: string;
+  readonly conditionKeys: string[];
 }
 
 /**

@@ -3723,10 +3723,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -3752,10 +3752,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -3788,10 +3788,10 @@ export class Rds extends PolicyStatement {
    * - .restoreDBInstanceToPointInTime()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -3803,10 +3803,10 @@ export class Rds extends PolicyStatement {
    * - db
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDatabaseClass(value: string | string[], operator?: string) {
-    return this.if(`rds:DatabaseClass`, value, operator || 'StringLike');
+  public ifDatabaseClass(value: string | string[], op?: string) {
+    return this.if(`rds:DatabaseClass`, value, op || 'StringLike');
   }
 
   /**
@@ -3822,10 +3822,10 @@ export class Rds extends PolicyStatement {
    * - db
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDatabaseEngine(value: string | string[], operator?: string) {
-    return this.if(`rds:DatabaseEngine`, value, operator || 'StringLike');
+  public ifDatabaseEngine(value: string | string[], op?: string) {
+    return this.if(`rds:DatabaseEngine`, value, op || 'StringLike');
   }
 
   /**
@@ -3841,10 +3841,10 @@ export class Rds extends PolicyStatement {
    * - db
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDatabaseName(value: string | string[], operator?: string) {
-    return this.if(`rds:DatabaseName`, value, operator || 'StringLike');
+  public ifDatabaseName(value: string | string[], op?: string) {
+    return this.if(`rds:DatabaseName`, value, op || 'StringLike');
   }
 
   /**
@@ -3856,10 +3856,10 @@ export class Rds extends PolicyStatement {
    * - .createDBClusterEndpoint()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEndpointType(value: string | string[], operator?: string) {
-    return this.if(`rds:EndpointType`, value, operator || 'StringLike');
+  public ifEndpointType(value: string | string[], op?: string) {
+    return this.if(`rds:EndpointType`, value, op || 'StringLike');
   }
 
   /**
@@ -3885,10 +3885,10 @@ export class Rds extends PolicyStatement {
    * - db
    *
    * @param value The value(s) to check
-   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   * @param op Operator of the condition. Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPiops(value: number | number[], operator?: string) {
-    return this.if(`rds:Piops`, value, operator || 'NumericEquals');
+  public ifPiops(value: number | number[], op?: string) {
+    return this.if(`rds:Piops`, value, op || 'NumericEquals');
   }
 
   /**
@@ -3918,10 +3918,10 @@ export class Rds extends PolicyStatement {
    * - db
    *
    * @param value The value(s) to check
-   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   * @param op Operator of the condition. Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifStorageSize(value: number | number[], operator?: string) {
-    return this.if(`rds:StorageSize`, value, operator || 'NumericEquals');
+  public ifStorageSize(value: number | number[], op?: string) {
+    return this.if(`rds:StorageSize`, value, op || 'NumericEquals');
   }
 
   /**
@@ -3948,10 +3948,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifClusterPgTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:cluster-pg-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifClusterPgTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:cluster-pg-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -3964,10 +3964,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifClusterSnapshotTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:cluster-snapshot-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifClusterSnapshotTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:cluster-snapshot-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -3980,10 +3980,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifClusterTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:cluster-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifClusterTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:cluster-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -3996,10 +3996,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDbTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:db-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifDbTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:db-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4012,10 +4012,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEsTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:es-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifEsTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:es-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4028,10 +4028,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOgTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:og-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifOgTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:og-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4044,10 +4044,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPgTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:pg-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifPgTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:pg-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4078,10 +4078,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReqTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:req-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifReqTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:req-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4094,10 +4094,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRiTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:ri-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifRiTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:ri-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4110,10 +4110,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSecgrpTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:secgrp-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifSecgrpTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:secgrp-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4126,10 +4126,10 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSnapshotTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:snapshot-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifSnapshotTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:snapshot-tag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4142,9 +4142,9 @@ export class Rds extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`rds:subgrp-tag/${ tagKey }`, value, operator || 'StringLike');
+  public ifSubgrpTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`rds:subgrp-tag/${ tagKey }`, value, op || 'StringLike');
   }
 }

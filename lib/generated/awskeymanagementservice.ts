@@ -1486,10 +1486,10 @@ export class Kms extends PolicyStatement {
    * - .verify()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCallerAccount(value: string | string[], operator?: string) {
-    return this.if(`kms:CallerAccount`, value, operator || 'StringLike');
+  public ifCallerAccount(value: string | string[], op?: string) {
+    return this.if(`kms:CallerAccount`, value, op || 'StringLike');
   }
 
   /**
@@ -1501,10 +1501,10 @@ export class Kms extends PolicyStatement {
    * - .createKey()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCustomerMasterKeySpec(value: string | string[], operator?: string) {
-    return this.if(`kms:CustomerMasterKeySpec`, value, operator || 'StringLike');
+  public ifCustomerMasterKeySpec(value: string | string[], op?: string) {
+    return this.if(`kms:CustomerMasterKeySpec`, value, op || 'StringLike');
   }
 
   /**
@@ -1516,10 +1516,10 @@ export class Kms extends PolicyStatement {
    * - .createKey()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCustomerMasterKeyUsage(value: string | string[], operator?: string) {
-    return this.if(`kms:CustomerMasterKeyUsage`, value, operator || 'StringLike');
+  public ifCustomerMasterKeyUsage(value: string | string[], op?: string) {
+    return this.if(`kms:CustomerMasterKeyUsage`, value, op || 'StringLike');
   }
 
   /**
@@ -1532,10 +1532,10 @@ export class Kms extends PolicyStatement {
    * - .generateDataKeyPairWithoutPlaintext()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDataKeyPairSpec(value: string | string[], operator?: string) {
-    return this.if(`kms:DataKeyPairSpec`, value, operator || 'StringLike');
+  public ifDataKeyPairSpec(value: string | string[], op?: string) {
+    return this.if(`kms:DataKeyPairSpec`, value, op || 'StringLike');
   }
 
   /**
@@ -1554,10 +1554,10 @@ export class Kms extends PolicyStatement {
    * - .reEncryptTo()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEncryptionAlgorithm(value: string | string[], operator?: string) {
-    return this.if(`kms:EncryptionAlgorithm`, value, operator || 'StringLike');
+  public ifEncryptionAlgorithm(value: string | string[], op?: string) {
+    return this.if(`kms:EncryptionAlgorithm`, value, op || 'StringLike');
   }
 
   /**
@@ -1576,10 +1576,10 @@ export class Kms extends PolicyStatement {
    * - .reEncryptTo()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEncryptionContextKeys(value: string | string[], operator?: string) {
-    return this.if(`kms:EncryptionContextKeys`, value, operator || 'StringLike');
+  public ifEncryptionContextKeys(value: string | string[], op?: string) {
+    return this.if(`kms:EncryptionContextKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -1591,10 +1591,10 @@ export class Kms extends PolicyStatement {
    * - .importKeyMaterial()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifExpirationModel(value: string | string[], operator?: string) {
-    return this.if(`kms:ExpirationModel`, value, operator || 'StringLike');
+  public ifExpirationModel(value: string | string[], op?: string) {
+    return this.if(`kms:ExpirationModel`, value, op || 'StringLike');
   }
 
   /**
@@ -1606,10 +1606,10 @@ export class Kms extends PolicyStatement {
    * - .createGrant()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGrantConstraintType(value: string | string[], operator?: string) {
-    return this.if(`kms:GrantConstraintType`, value, operator || 'StringLike');
+  public ifGrantConstraintType(value: string | string[], op?: string) {
+    return this.if(`kms:GrantConstraintType`, value, op || 'StringLike');
   }
 
   /**
@@ -1634,10 +1634,10 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-operations
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGrantOperations(value: string | string[], operator?: string) {
-    return this.if(`kms:GrantOperations`, value, operator || 'StringLike');
+  public ifGrantOperations(value: string | string[], op?: string) {
+    return this.if(`kms:GrantOperations`, value, op || 'StringLike');
   }
 
   /**
@@ -1646,10 +1646,10 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grantee-principal
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGranteePrincipal(value: string | string[], operator?: string) {
-    return this.if(`kms:GranteePrincipal`, value, operator || 'StringLike');
+  public ifGranteePrincipal(value: string | string[], op?: string) {
+    return this.if(`kms:GranteePrincipal`, value, op || 'StringLike');
   }
 
   /**
@@ -1661,10 +1661,10 @@ export class Kms extends PolicyStatement {
    * - .createKey()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifKeyOrigin(value: string | string[], operator?: string) {
-    return this.if(`kms:KeyOrigin`, value, operator || 'StringLike');
+  public ifKeyOrigin(value: string | string[], op?: string) {
+    return this.if(`kms:KeyOrigin`, value, op || 'StringLike');
   }
 
   /**
@@ -1677,10 +1677,10 @@ export class Kms extends PolicyStatement {
    * - .verify()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMessageType(value: string | string[], operator?: string) {
-    return this.if(`kms:MessageType`, value, operator || 'StringLike');
+  public ifMessageType(value: string | string[], op?: string) {
+    return this.if(`kms:MessageType`, value, op || 'StringLike');
   }
 
   /**
@@ -1704,10 +1704,10 @@ export class Kms extends PolicyStatement {
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-retiring-principal
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRetiringPrincipal(value: string | string[], operator?: string) {
-    return this.if(`kms:RetiringPrincipal`, value, operator || 'StringLike');
+  public ifRetiringPrincipal(value: string | string[], op?: string) {
+    return this.if(`kms:RetiringPrincipal`, value, op || 'StringLike');
   }
 
   /**
@@ -1720,10 +1720,10 @@ export class Kms extends PolicyStatement {
    * - .verify()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSigningAlgorithm(value: string | string[], operator?: string) {
-    return this.if(`kms:SigningAlgorithm`, value, operator || 'StringLike');
+  public ifSigningAlgorithm(value: string | string[], op?: string) {
+    return this.if(`kms:SigningAlgorithm`, value, op || 'StringLike');
   }
 
   /**
@@ -1735,10 +1735,10 @@ export class Kms extends PolicyStatement {
    * - .importKeyMaterial()
    *
    * @param value The value(s) to check
-   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   * @param op Operator of the condition. Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifValidTo(value: number | number[], operator?: string) {
-    return this.if(`kms:ValidTo`, value, operator || 'NumericEquals');
+  public ifValidTo(value: number | number[], op?: string) {
+    return this.if(`kms:ValidTo`, value, op || 'NumericEquals');
   }
 
   /**
@@ -1784,10 +1784,10 @@ export class Kms extends PolicyStatement {
    * - .verify()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifViaService(value: string | string[], operator?: string) {
-    return this.if(`kms:ViaService`, value, operator || 'StringLike');
+  public ifViaService(value: string | string[], op?: string) {
+    return this.if(`kms:ViaService`, value, op || 'StringLike');
   }
 
   /**
@@ -1799,10 +1799,10 @@ export class Kms extends PolicyStatement {
    * - .getParametersForImport()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWrappingAlgorithm(value: string | string[], operator?: string) {
-    return this.if(`kms:WrappingAlgorithm`, value, operator || 'StringLike');
+  public ifWrappingAlgorithm(value: string | string[], op?: string) {
+    return this.if(`kms:WrappingAlgorithm`, value, op || 'StringLike');
   }
 
   /**
@@ -1814,9 +1814,9 @@ export class Kms extends PolicyStatement {
    * - .getParametersForImport()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWrappingKeySpec(value: string | string[], operator?: string) {
-    return this.if(`kms:WrappingKeySpec`, value, operator || 'StringLike');
+  public ifWrappingKeySpec(value: string | string[], op?: string) {
+    return this.if(`kms:WrappingKeySpec`, value, op || 'StringLike');
   }
 }

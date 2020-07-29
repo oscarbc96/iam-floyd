@@ -1,5 +1,7 @@
 import { PolicyStatementWithCDKPrincipal } from './7-principals-CDK';
 
+export * as from from './7-principals-CDK';
+
 /**
  * Represents a statement in an IAM policy document
  */

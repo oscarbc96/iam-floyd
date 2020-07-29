@@ -1332,10 +1332,10 @@ export class Lambda extends PolicyStatement {
    * - .updateEventSourceMapping()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifFunctionArn(value: string | string[], operator?: string) {
-    return this.if(`lambda:FunctionArn`, value, operator || 'ArnEquals');
+  public ifFunctionArn(value: string | string[], op?: string) {
+    return this.if(`lambda:FunctionArn`, value, op || 'ArnEquals');
   }
 
   /**
@@ -1346,10 +1346,10 @@ export class Lambda extends PolicyStatement {
    * - .updateFunctionConfiguration()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLayer(value: string | string[], operator?: string) {
-    return this.if(`lambda:Layer`, value, operator || 'StringLike');
+  public ifLayer(value: string | string[], op?: string) {
+    return this.if(`lambda:Layer`, value, op || 'StringLike');
   }
 
   /**
@@ -1360,9 +1360,9 @@ export class Lambda extends PolicyStatement {
    * - .removePermission()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPrincipal(value: string | string[], operator?: string) {
-    return this.if(`lambda:Principal`, value, operator || 'StringLike');
+  public ifPrincipal(value: string | string[], op?: string) {
+    return this.if(`lambda:Principal`, value, op || 'StringLike');
   }
 }

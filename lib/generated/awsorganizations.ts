@@ -1360,10 +1360,10 @@ export class Organizations extends PolicyStatement {
    * - .updatePolicy()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPolicyType(value: string | string[], operator?: string) {
-    return this.if(`organizations:PolicyType`, value, operator || 'StringLike');
+  public ifPolicyType(value: string | string[], op?: string) {
+    return this.if(`organizations:PolicyType`, value, op || 'StringLike');
   }
 
   /**
@@ -1379,9 +1379,9 @@ export class Organizations extends PolicyStatement {
    * - .registerDelegatedAdministrator()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifServicePrincipal(value: string | string[], operator?: string) {
-    return this.if(`organizations:ServicePrincipal`, value, operator || 'StringLike');
+  public ifServicePrincipal(value: string | string[], op?: string) {
+    return this.if(`organizations:ServicePrincipal`, value, op || 'StringLike');
   }
 }

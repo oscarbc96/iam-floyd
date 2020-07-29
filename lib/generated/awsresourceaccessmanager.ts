@@ -703,10 +703,10 @@ export class Ram extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -728,10 +728,10 @@ export class Ram extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -745,10 +745,10 @@ export class Ram extends PolicyStatement {
    * - .untagResource()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -788,10 +788,10 @@ export class Ram extends PolicyStatement {
    * - permission
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPermissionArn(value: string | string[], operator?: string) {
-    return this.if(`ram:PermissionArn`, value, operator || 'ArnEquals');
+  public ifPermissionArn(value: string | string[], op?: string) {
+    return this.if(`ram:PermissionArn`, value, op || 'ArnEquals');
   }
 
   /**
@@ -805,10 +805,10 @@ export class Ram extends PolicyStatement {
    * - .disassociateResourceShare()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPrincipal(value: string | string[], operator?: string) {
-    return this.if(`ram:Principal`, value, operator || 'StringLike');
+  public ifPrincipal(value: string | string[], op?: string) {
+    return this.if(`ram:Principal`, value, op || 'StringLike');
   }
 
   /**
@@ -837,10 +837,10 @@ export class Ram extends PolicyStatement {
    * - .disassociateResourceShare()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRequestedResourceType(value: string | string[], operator?: string) {
-    return this.if(`ram:RequestedResourceType`, value, operator || 'StringLike');
+  public ifRequestedResourceType(value: string | string[], op?: string) {
+    return this.if(`ram:RequestedResourceType`, value, op || 'StringLike');
   }
 
   /**
@@ -854,10 +854,10 @@ export class Ram extends PolicyStatement {
    * - .disassociateResourceShare()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifResourceArn(value: string | string[], operator?: string) {
-    return this.if(`ram:ResourceArn`, value, operator || 'ArnEquals');
+  public ifResourceArn(value: string | string[], op?: string) {
+    return this.if(`ram:ResourceArn`, value, op || 'ArnEquals');
   }
 
   /**
@@ -878,10 +878,10 @@ export class Ram extends PolicyStatement {
    * - resource-share
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceShareName(value: string | string[], operator?: string) {
-    return this.if(`ram:ResourceShareName`, value, operator || 'StringLike');
+  public ifResourceShareName(value: string | string[], op?: string) {
+    return this.if(`ram:ResourceShareName`, value, op || 'StringLike');
   }
 
   /**
@@ -894,9 +894,9 @@ export class Ram extends PolicyStatement {
    * - .rejectResourceShareInvitation()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifShareOwnerAccountId(value: string | string[], operator?: string) {
-    return this.if(`ram:ShareOwnerAccountId`, value, operator || 'StringLike');
+  public ifShareOwnerAccountId(value: string | string[], op?: string) {
+    return this.if(`ram:ShareOwnerAccountId`, value, op || 'StringLike');
   }
 }

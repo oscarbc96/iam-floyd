@@ -4502,10 +4502,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4538,10 +4538,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4576,10 +4576,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateMonitoringSchedule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -4593,10 +4593,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateNotebookInstance()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAcceleratorTypes(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:AcceleratorTypes`, value, operator || 'StringLike');
+  public ifAcceleratorTypes(value: string | string[], op?: string) {
+    return this.if(`sagemaker:AcceleratorTypes`, value, op || 'StringLike');
   }
 
   /**
@@ -4608,10 +4608,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createDomain()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAppNetworkAccess(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:AppNetworkAccess`, value, operator || 'StringLike');
+  public ifAppNetworkAccess(value: string | string[], op?: string) {
+    return this.if(`sagemaker:AppNetworkAccess`, value, op || 'StringLike');
   }
 
   /**
@@ -4623,10 +4623,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createNotebookInstance()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDirectInternetAccess(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:DirectInternetAccess`, value, operator || 'StringLike');
+  public ifDirectInternetAccess(value: string | string[], op?: string) {
+    return this.if(`sagemaker:DirectInternetAccess`, value, op || 'StringLike');
   }
 
   /**
@@ -4641,10 +4641,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateUserProfile()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifDomainSharingOutputKmsKey(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:DomainSharingOutputKmsKey`, value, operator || 'ArnEquals');
+  public ifDomainSharingOutputKmsKey(value: string | string[], op?: string) {
+    return this.if(`sagemaker:DomainSharingOutputKmsKey`, value, op || 'ArnEquals');
   }
 
   /**
@@ -4657,10 +4657,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createTrainingJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifFileSystemAccessMode(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:FileSystemAccessMode`, value, operator || 'StringLike');
+  public ifFileSystemAccessMode(value: string | string[], op?: string) {
+    return this.if(`sagemaker:FileSystemAccessMode`, value, op || 'StringLike');
   }
 
   /**
@@ -4673,10 +4673,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createTrainingJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifFileSystemDirectoryPath(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:FileSystemDirectoryPath`, value, operator || 'StringLike');
+  public ifFileSystemDirectoryPath(value: string | string[], op?: string) {
+    return this.if(`sagemaker:FileSystemDirectoryPath`, value, op || 'StringLike');
   }
 
   /**
@@ -4689,10 +4689,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createTrainingJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifFileSystemId(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:FileSystemId`, value, operator || 'StringLike');
+  public ifFileSystemId(value: string | string[], op?: string) {
+    return this.if(`sagemaker:FileSystemId`, value, op || 'StringLike');
   }
 
   /**
@@ -4705,10 +4705,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createTrainingJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifFileSystemType(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:FileSystemType`, value, operator || 'StringLike');
+  public ifFileSystemType(value: string | string[], op?: string) {
+    return this.if(`sagemaker:FileSystemType`, value, op || 'StringLike');
   }
 
   /**
@@ -4720,10 +4720,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createDomain()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifHomeEfsFileSystemKmsKey(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:HomeEfsFileSystemKmsKey`, value, operator || 'ArnEquals');
+  public ifHomeEfsFileSystemKmsKey(value: string | string[], op?: string) {
+    return this.if(`sagemaker:HomeEfsFileSystemKmsKey`, value, op || 'ArnEquals');
   }
 
   /**
@@ -4748,10 +4748,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateUserProfile()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceTypes(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:InstanceTypes`, value, operator || 'StringLike');
+  public ifInstanceTypes(value: string | string[], op?: string) {
+    return this.if(`sagemaker:InstanceTypes`, value, op || 'StringLike');
   }
 
   /**
@@ -4784,10 +4784,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateMonitoringSchedule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   * @param op Operator of the condition. Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMaxRuntimeInSeconds(value: number | number[], operator?: string) {
-    return this.if(`sagemaker:MaxRuntimeInSeconds`, value, operator || 'NumericEquals');
+  public ifMaxRuntimeInSeconds(value: number | number[], op?: string) {
+    return this.if(`sagemaker:MaxRuntimeInSeconds`, value, op || 'NumericEquals');
   }
 
   /**
@@ -4800,10 +4800,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createTransformJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifModelArn(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:ModelArn`, value, operator || 'ArnEquals');
+  public ifModelArn(value: string | string[], op?: string) {
+    return this.if(`sagemaker:ModelArn`, value, op || 'ArnEquals');
   }
 
   /**
@@ -4841,10 +4841,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateMonitoringSchedule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifOutputKmsKey(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:OutputKmsKey`, value, operator || 'ArnEquals');
+  public ifOutputKmsKey(value: string | string[], op?: string) {
+    return this.if(`sagemaker:OutputKmsKey`, value, op || 'ArnEquals');
   }
 
   /**
@@ -4853,10 +4853,10 @@ export class Sagemaker extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTagExists(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:ResourceTag/`, value, operator || 'StringLike');
+  public ifResourceTagExists(value: string | string[], op?: string) {
+    return this.if(`sagemaker:ResourceTag/`, value, op || 'StringLike');
   }
 
   /**
@@ -4889,10 +4889,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`sagemaker:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`sagemaker:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -4905,10 +4905,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateNotebookInstance()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRootAccess(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:RootAccess`, value, operator || 'StringLike');
+  public ifRootAccess(value: string | string[], op?: string) {
+    return this.if(`sagemaker:RootAccess`, value, op || 'StringLike');
   }
 
   /**
@@ -4920,10 +4920,10 @@ export class Sagemaker extends PolicyStatement {
    * - .invokeEndpoint()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTargetModel(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:TargetModel`, value, operator || 'StringLike');
+  public ifTargetModel(value: string | string[], op?: string) {
+    return this.if(`sagemaker:TargetModel`, value, op || 'StringLike');
   }
 
   /**
@@ -4944,10 +4944,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateMonitoringSchedule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifVolumeKmsKey(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:VolumeKmsKey`, value, operator || 'ArnEquals');
+  public ifVolumeKmsKey(value: string | string[], op?: string) {
+    return this.if(`sagemaker:VolumeKmsKey`, value, op || 'ArnEquals');
   }
 
   /**
@@ -4970,10 +4970,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateUserProfile()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpcSecurityGroupIds(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:VpcSecurityGroupIds`, value, operator || 'StringLike');
+  public ifVpcSecurityGroupIds(value: string | string[], op?: string) {
+    return this.if(`sagemaker:VpcSecurityGroupIds`, value, op || 'StringLike');
   }
 
   /**
@@ -4993,10 +4993,10 @@ export class Sagemaker extends PolicyStatement {
    * - .updateMonitoringSchedule()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpcSubnets(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:VpcSubnets`, value, operator || 'StringLike');
+  public ifVpcSubnets(value: string | string[], op?: string) {
+    return this.if(`sagemaker:VpcSubnets`, value, op || 'StringLike');
   }
 
   /**
@@ -5009,10 +5009,10 @@ export class Sagemaker extends PolicyStatement {
    * - .createLabelingJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifWorkteamArn(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:WorkteamArn`, value, operator || 'ArnEquals');
+  public ifWorkteamArn(value: string | string[], op?: string) {
+    return this.if(`sagemaker:WorkteamArn`, value, op || 'ArnEquals');
   }
 
   /**
@@ -5025,9 +5025,9 @@ export class Sagemaker extends PolicyStatement {
    * - .createLabelingJob()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWorkteamType(value: string | string[], operator?: string) {
-    return this.if(`sagemaker:WorkteamType`, value, operator || 'StringLike');
+  public ifWorkteamType(value: string | string[], op?: string) {
+    return this.if(`sagemaker:WorkteamType`, value, op || 'StringLike');
   }
 }

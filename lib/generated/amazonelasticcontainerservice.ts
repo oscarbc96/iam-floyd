@@ -1566,10 +1566,10 @@ export class Ecs extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsRequestTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -1586,10 +1586,10 @@ export class Ecs extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifAwsResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -1607,10 +1607,10 @@ export class Ecs extends PolicyStatement {
    * - .untagResource()
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  public ifAwsTagKeys(value: string | string[], op?: string) {
+    return this.if(`aws:TagKeys`, value, op || 'StringLike');
   }
 
   /**
@@ -1627,10 +1627,10 @@ export class Ecs extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param op Operator of the condition. Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`ecs:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  public ifResourceTag(tagKey: string, value: string | string[], op?: string) {
+    return this.if(`ecs:ResourceTag/${ tagKey }`, value, op || 'StringLike');
   }
 
   /**
@@ -1646,10 +1646,10 @@ export class Ecs extends PolicyStatement {
    * - .updateService()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifCapacityProvider(value: string | string[], operator?: string) {
-    return this.if(`ecs:capacity-provider`, value, operator || 'ArnEquals');
+  public ifCapacityProvider(value: string | string[], op?: string) {
+    return this.if(`ecs:capacity-provider`, value, op || 'ArnEquals');
   }
 
   /**
@@ -1682,10 +1682,10 @@ export class Ecs extends PolicyStatement {
    * - .updateTaskSet()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifCluster(value: string | string[], operator?: string) {
-    return this.if(`ecs:cluster`, value, operator || 'ArnEquals');
+  public ifCluster(value: string | string[], op?: string) {
+    return this.if(`ecs:cluster`, value, op || 'ArnEquals');
   }
 
   /**
@@ -1697,10 +1697,10 @@ export class Ecs extends PolicyStatement {
    * - .startTask()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifContainerInstances(value: string | string[], operator?: string) {
-    return this.if(`ecs:container-instances`, value, operator || 'ArnEquals');
+  public ifContainerInstances(value: string | string[], op?: string) {
+    return this.if(`ecs:container-instances`, value, op || 'ArnEquals');
   }
 
   /**
@@ -1715,10 +1715,10 @@ export class Ecs extends PolicyStatement {
    * - .updateTaskSet()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifService(value: string | string[], operator?: string) {
-    return this.if(`ecs:service`, value, operator || 'ArnEquals');
+  public ifService(value: string | string[], op?: string) {
+    return this.if(`ecs:service`, value, op || 'ArnEquals');
   }
 
   /**
@@ -1732,9 +1732,9 @@ export class Ecs extends PolicyStatement {
    * - .updateService()
    *
    * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   * @param op Operator of the condition. Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTaskDefinition(value: string | string[], operator?: string) {
-    return this.if(`ecs:task-definition`, value, operator || 'ArnEquals');
+  public ifTaskDefinition(value: string | string[], op?: string) {
+    return this.if(`ecs:task-definition`, value, op || 'ArnEquals');
   }
 }
