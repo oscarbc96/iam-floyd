@@ -7,6 +7,8 @@ export enum Effect {
 
 /**
  * Adds "effect" functionality to the Policy Statement
+ *
+ * @internal
  */
 export class PolicyStatementWithEffect extends PolicyStatementWithResources {
   public effect = Effect.ALLOW;

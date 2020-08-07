@@ -13,6 +13,8 @@ export enum PrincipalType {
 
 /**
  * Adds "principal" functionality to the Policy Statement
+ *
+ * @internal
  */
 export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   protected useNotPrincipals = false;

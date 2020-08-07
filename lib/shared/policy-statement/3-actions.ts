@@ -1,3 +1,5 @@
+import glob from 'glob-to-regexp';
+
 import { AccessLevel } from '../access-level';
 import { PolicyStatementWithCondition } from './2-conditions';
 
@@ -16,6 +18,8 @@ export interface Actions {
 
 /**
  * Adds "action" functionality to the Policy Statement
+ *
+ * @internal
  */
 export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   protected actionList: Actions = {};
@@ -100,13 +104,19 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * When no value is passed, all actions of the service will be added.
    */
-  public allActions(...rules: (AccessLevel | RegExp)[]) {
+  public allActions(...rules: (AccessLevel | string)[]) {
     if (rules.length) {
       rules.forEach((rule) => {
         for (const [name, action] of Object.entries(this.actionList)) {
-          if (typeof rule === 'object') {
-            //assume it's a regex
-            if ((rule as RegExp).test(name)) {
+          if (typeof rule === 'string') {
+            let rex: RegExp;
+            if (rule.startsWith('/')) {
+              //assume it's a regex
+              rex = new RegExp(rule);
+            } else {
+              rex = glob(rule);
+            }
+            if (rex.test(name)) {
               this.add(`${this.servicePrefix}:${name}`);
             }
           } else {
